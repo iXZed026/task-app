@@ -1,0 +1,27 @@
+.form-search {
+    width: 89%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-search input {
+    width: 28%;
+    height: 35px;
+    padding: 0 1%;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    color: white;
+}
+
+.form-search button {
+    width: 12%;
+    height: 35px;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}

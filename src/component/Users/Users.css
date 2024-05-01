@@ -19,25 +19,26 @@
 
 
 .search {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    display: flex;
+    gap: 5px;
     margin-top: 10%;
     margin-bottom: 2%;
     padding: 1% 1%;
-            border-radius: 50%;
 }
 
 #icon-style {
-    width: 40px;
+    width: 9%;
     height: 40px;
     color: var(--text-color);
     cursor: pointer;
 }
 
-.users-table table{
+
+.users-table table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 10px; 
+    border-spacing: 0 10px;
 }
 
 table thead tr {
@@ -45,10 +46,10 @@ table thead tr {
 }
 
 table thead tr th {
-        border-bottom: 1px solid var(--text-color);
-        border-top: 1px solid var(--text-color);
-        background-color: rgba(0, 255, 255, 0.114);
-        color: white;
+    border-bottom: 1px solid var(--text-color);
+    border-top: 1px solid var(--text-color);
+    background-color: rgba(0, 255, 255, 0.114);
+    color: white;
 }
 
 table tbody tr {
@@ -72,7 +73,8 @@ table td {
 
 }
 
-table th , table td {
+table th,
+table td {
     padding: 2% 1%;
     text-align: right;
 }
