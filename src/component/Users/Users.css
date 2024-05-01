@@ -1,0 +1,82 @@
+.users {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    direction: rtl;
+}
+
+.users-container {
+    width: 90%;
+    margin: auto;
+}
+
+.users-flex {
+    width: 75%;
+    margin: auto;
+}
+
+
+.search {
+    width: 70px;
+    height: 70px;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    padding: 1% 1%;
+            border-radius: 50%;
+}
+
+#icon-style {
+    width: 40px;
+    height: 40px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.users-table table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+}
+
+table thead tr {
+    box-shadow: 0 -2px 4px var(--text-color);
+}
+
+table thead tr th {
+        border-bottom: 1px solid var(--text-color);
+        border-top: 1px solid var(--text-color);
+        background-color: rgba(0, 255, 255, 0.114);
+        color: white;
+}
+
+table tbody tr {
+    width: 100%;
+    /* background-image: url("../../../public/images/gray.jpg"); */
+    background-size: cover;
+    background-position: bottom;
+}
+
+#border {
+    border-right: 5px solid var(--text-color);
+    border-bottom-right-radius: 30px;
+}
+
+#radius {
+    border-top-left-radius: 30px;
+}
+
+table td {
+    background-color: rgb(18, 18, 28);
+
+}
+
+table th , table td {
+    padding: 2% 1%;
+    text-align: right;
+}
+
+table td {
+    border-bottom: 1px solid var(--text-color);
+}

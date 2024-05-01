@@ -1,11 +1,10 @@
 .header {
     width: 100%;
-
-    background-color: #1a1a1e;
+    position: fixed;
+    background-color: var(--main-color);
     box-shadow: 0 0 8px var(--text-color);
     color: white;
     animation: headerAni 0.7s linear 1; 
-    margin-bottom: 2%;
 }
 
 @keyframes headerAni {
