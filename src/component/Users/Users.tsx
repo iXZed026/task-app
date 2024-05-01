@@ -17,9 +17,10 @@ const Users: React.FC = () => {
     const usersJsonData = require('../../json/Users.json');
 
     const [users, setUsers] = useState<any>(usersJsonData);
+    const [search, setSearchFlag] = useState<boolean>(false)
 
     const searchUserHandle = () => {
-
+        setSearchFlag(!search)
     }
 
     return (
@@ -28,12 +29,17 @@ const Users: React.FC = () => {
                 <div className="users-flex">
                     <div className="search">
                         <FaSearch id="icon-style" onClick={searchUserHandle} />
-                        <Search />
+                        {
+                            search && (
+                                <Search users={users} setUsers={setUsers} />
+                            )
+                        }
                     </div>
                     <div className="users-table">
                         <table>
                             <thead>
                                 <tr>
+                                    <th>ردیف</th>
                                     <th>نام</th>
                                     <th>نام خانوادگی</th>
                                     <th>کد ملی</th>
@@ -44,7 +50,8 @@ const Users: React.FC = () => {
                                 {
                                     users.map((user: User, key: number) => (
                                         <tr key={user.id}>
-                                            <td id='border'>{user.name}</td>
+                                            <td id='border'>{1}</td>
+                                            <td>{user.name}</td>
                                             <td>{user.lastName}</td>
                                             <td>{user.nationalCode}</td>
                                             <td id='radius'>d m l g</td>

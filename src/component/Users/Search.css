@@ -3,6 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: searchAni .2s linear 1;
+}
+
+@keyframes searchAni {
+    0%{
+        width: 0;
+    }
 }
 
 .form-search input {
