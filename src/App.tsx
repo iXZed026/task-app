@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState} from 'react';
+import Header from './component/Header/Header';
 
-const App = () => {
+// const usersJsonData = require('./json/Users.json');
+
+const App : React.FC = () => {
+
+  // const [Users, setUsers] = useState<[]>();
+
+
+
   return (
     <div className="app">
-      
+
     </div>
   )
 }
