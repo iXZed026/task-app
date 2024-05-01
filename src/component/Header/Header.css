@@ -1,0 +1,57 @@
+.header {
+    width: 100%;
+
+    background-color: #1a1a1e;
+    box-shadow: 0 0 8px var(--text-color);
+    color: white;
+    animation: headerAni 0.7s linear 1; 
+    margin-bottom: 2%;
+}
+
+@keyframes headerAni {
+    0% {
+        transform: translate(0, -100px);
+    }
+}
+
+.header-container {
+    width: 90%;
+    margin: auto;
+}
+
+.header-flex {
+    display: flex;
+    height: 53px;
+}
+
+.header-flex .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-flex .brand h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.header-flex .brand h1 span {
+    color: var(--text-color);
+}
+
+#js-icon {
+    width: 35px;
+    height: 35px;
+}
+
+@media screen and (max-width:550px) {
+    .header-flex {
+        justify-content: center;
+        height: 60px;
+    }
+
+    .header-flex .brand h1 {
+        font-size: 30px;
+    }
+}

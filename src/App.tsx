@@ -1,9 +1,10 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
+import "./App.css";
 import Header from './component/Header/Header';
 
 // const usersJsonData = require('./json/Users.json');
 
-const App : React.FC = () => {
+const App: React.FC = () => {
 
   // const [Users, setUsers] = useState<[]>();
 
@@ -11,7 +12,7 @@ const App : React.FC = () => {
 
   return (
     <div className="app">
-
+      <Header />
     </div>
   )
 }
