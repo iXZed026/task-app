@@ -23,7 +23,7 @@ const Users: React.FC = () => {
     const [search, setSearchFlag] = useState<boolean>(false);
 
     const [deleteModalFlag, setDeleteModalFlag] = useState<boolean>(false);
-    const [addModal, setAddModal] = useState<boolean>(false);
+    const [addModalFlag, setAddModalFlag] = useState<boolean>(false);
     let [ntCode, setNtCode] = useState();
 
 
@@ -36,6 +36,9 @@ const Users: React.FC = () => {
         setNtCode(ntCode)
     }
 
+    const addModalHandler = ()=>{
+        setAddModalFlag (true);
+    }
 
 
     return (
@@ -54,7 +57,7 @@ const Users: React.FC = () => {
                                 search ? (
                                     <IoPersonAdd style={{display:"none"}}/>
                                 ) : (
-                                    <IoPersonAdd id='add-icon'/>
+                                    <IoPersonAdd id='add-icon' onClick={addModalHandler}/>
                                 )
                             }
                         </div>
@@ -98,8 +101,8 @@ const Users: React.FC = () => {
                 )
             }
             {
-                addModal && (
-                    <AddModal />
+                addModalFlag && (
+                    <AddModal users={users} setUsers={setUsers} setAddModalFlag={setAddModalFlag}/>
                 )
             }
         </>
