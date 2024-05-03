@@ -3,10 +3,12 @@ import "./Users.css";
 import Search from './Search';
 import DeleteModal from './DeleteModal';
 import AddModal from './AddModal';
-import axios from 'axios';
+import EditModal from './EditModal';
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
+import { FaEdit } from "react-icons/fa";
+
 interface User {
     id: number,
     name: string,
@@ -24,6 +26,7 @@ const Users: React.FC = () => {
 
     const [deleteModalFlag, setDeleteModalFlag] = useState<boolean>(false);
     const [addModalFlag, setAddModalFlag] = useState<boolean>(false);
+    const [editModalFlag,setEditModalFlag] = useState(false)
     let [ntCode, setNtCode] = useState();
 
 
@@ -36,9 +39,16 @@ const Users: React.FC = () => {
         setNtCode(ntCode)
     }
 
-    const addModalHandler = ()=>{
-        setAddModalFlag (true);
+    const addModalHandler = () => {
+        setAddModalFlag(true);
     }
+
+    const editModalHandle = (ntCode:any)=>{
+        setEditModalFlag(true)
+        setNtCode(ntCode)
+    }
+
+  
 
 
     return (
@@ -46,7 +56,7 @@ const Users: React.FC = () => {
             <div className="users">
                 <div className="users-container">
                     <div className="users-flex">
-                        <div className="search" style={{justifyContent:search ? "" : "space-between"}}>
+                        <div className="search" style={{ justifyContent: search ? "" : "space-between" }}>
                             <FaSearch id="icon-style" onClick={searchUserHandle} />
                             {
                                 search && (
@@ -55,9 +65,9 @@ const Users: React.FC = () => {
                             }
                             {
                                 search ? (
-                                    <IoPersonAdd style={{display:"none"}}/>
+                                    <IoPersonAdd style={{ display: "none" }} />
                                 ) : (
-                                    <IoPersonAdd id='add-icon' onClick={addModalHandler}/>
+                                    <IoPersonAdd id='add-icon' onClick={addModalHandler} />
                                 )
                             }
                         </div>
@@ -83,7 +93,8 @@ const Users: React.FC = () => {
                                                 <td id='radius'>
                                                     <div>
                                                         <MdOutlineDelete onClick={() => deleteModalHandle(user.nationalCode)} id='delete-icon' />
-                                                        
+                                                        <FaEdit onClick={() => editModalHandle(user.nationalCode)} />
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -102,7 +113,12 @@ const Users: React.FC = () => {
             }
             {
                 addModalFlag && (
-                    <AddModal users={users} setUsers={setUsers} setAddModalFlag={setAddModalFlag}/>
+                    <AddModal users={users} setUsers={setUsers} setAddModalFlag={setAddModalFlag} />
+                )
+            }
+            {
+                editModalFlag && (
+                    <EditModal ntCode={ntCode} users={users} setUsers={setUsers} setEditModalFlag={setEditModalFlag}/>
                 )
             }
         </>

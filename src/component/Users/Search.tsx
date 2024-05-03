@@ -16,6 +16,8 @@ const Search: React.FC<Props> = ({ users, setUsers }) => {
 
     const usersJsonData = require('../../json/Users.json');
 
+    
+
     const [inputValue, setInputValue] = useState<Value>({
         name: "",
         lastName: "",
