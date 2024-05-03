@@ -17,12 +17,21 @@
 .search {
     width: 100%;
     display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
     gap: 5px;
     padding: 1% 1%;
 }
 
 #icon-style {
-    width: 9%;
+    width: 100px;
+    height: 40px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#add-icon {
+    width: 100px;
     height: 40px;
     color: var(--text-color);
     cursor: pointer;
@@ -58,7 +67,7 @@ table tbody tr {
     border-bottom-right-radius: 30px;
 }
 
-#icon {
+#delete-icon {
     width: 23px;
     height: 23px;
     color: rgba(251, 99, 99, 0.577);
@@ -67,6 +76,12 @@ table tbody tr {
 
 #radius {
     border-top-left-radius: 30px;
+}
+
+#radius div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 table td {
@@ -83,4 +98,3 @@ table td {
 table td {
     border-bottom: 1px solid var(--text-color);
 }
-

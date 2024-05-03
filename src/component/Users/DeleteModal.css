@@ -7,5 +7,91 @@
     position: fixed;
     top: 0;
     color: white;
-    background-color: rgba(0, 0, 0, 0.141);
+    background-color: rgba(0, 0, 0, 0.477);
+}
+
+.deleteModal-container {
+    width: 90%;
+    margin: auto;
+}
+
+
+.deleteModal-flex {
+    width: 440px;
+    height: 210px;
+    margin: auto;
+    background-color: var(--main-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    animation: delteModalAni .6s linear 1;
+}
+
+@keyframes delteModalAni {
+    0%{
+        transform: translate(0,-1000px);
+    }
+}
+
+.deleteModal-header {
+    padding: 1% 1%;
+}
+
+#deleteModal-icon {
+    width: 25px;
+    height: 25px;
+    color: rgb(247, 107, 107);
+}
+
+.delteModal-body {
+    padding: 4% 3%;
+    direction: rtl;
+}
+
+#delteModal-title {
+    color: rgba(255, 255, 255, 0.829);
+    word-spacing: 2px;
+    font-size: 14px;
+}
+
+.deleteModal-footer {
+    width: 100%;
+    padding: 9% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.deleteModal-footer button:first-child {
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    background-color: var(--text-color);
+    border-radius: 15px;
+    box-shadow: 0 0 6px cyan;
+    cursor: pointer;
+}
+
+.deleteModal-footer button:first-child:hover {
+    transition: 0.5s;
+    background-color: cyan;
+}
+
+.deleteModal-footer button:last-child {
+    width: 80px;
+    height: 36px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(243, 75, 75);
+    box-shadow: 0 0 5px rgb(252, 55, 55);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.deleteModal-footer button:last-child:hover {
+    transition: 0.5s;
+    background-color: rgb(245, 121, 121);
 }
