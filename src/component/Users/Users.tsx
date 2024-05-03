@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "./Users.css";
 import Search from './Search';
+import DeleteModal from './DeleteModal'; 
 import axios from 'axios';
 import { FaSearch } from "react-icons/fa";
+import { MdOutlineDelete } from "react-icons/md";
 
 interface User {
     id: number,
@@ -12,18 +14,33 @@ interface User {
 }
 
 
-const Users: React.FC = () => {
+const Users:React.FC = () => {
 
     const usersJsonData = require('../../json/Users.json');
 
     const [users, setUsers] = useState<any>(usersJsonData);
-    const [search, setSearchFlag] = useState<boolean>(false)
+    const [search, setSearchFlag] = useState<boolean>(false);
+    const [deleteModalFlag,setDeleteModalFlag] = useState<boolean>(false);
 
     const searchUserHandle = () => {
         setSearchFlag(!search)
     }
 
+    const deleteModalHandle = ()=> {
+        setDeleteModalFlag(true);
+    }
+
+    const deleteUserHandler = (ntCode:string) => {
+
+    const removeUser = users.filter((user:User) => user.nationalCode !== ntCode)        ;
+
+    setUsers(removeUser)
+
+    }
+
+
     return (
+        <>
         <div className="users">
             <div className="users-container">
                 <div className="users-flex">
@@ -50,11 +67,13 @@ const Users: React.FC = () => {
                                 {
                                     users.map((user: User, key: number) => (
                                         <tr key={user.id}>
-                                            <td id='border'>{1}</td>
+                                            <td id='border'>1</td>
                                             <td>{user.name}</td>
                                             <td>{user.lastName}</td>
                                             <td>{user.nationalCode}</td>
-                                            <td id='radius'>d m l g</td>
+                                            <td id='radius'>
+                                            <MdOutlineDelete onClick={() => deleteModalHandle()} id='icon' />
+                                            </td>
                                         </tr>
                                     ))
                                 }
@@ -64,6 +83,12 @@ const Users: React.FC = () => {
                 </div>
             </div>
         </div>
+        {
+            deleteModalFlag && (
+                <DeleteModal />
+            )
+        }
+        </>
     )
 }
 
