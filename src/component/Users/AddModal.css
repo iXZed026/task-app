@@ -22,6 +22,13 @@
     background-color: var(--main-color);
     border: 1px solid var(--text-color);
     border-radius: 10px;
+    animation: addModalAni .6s linear 1;
+}
+
+@keyframes addModalAni {
+    0% {
+        transform: translate(0, -1000px);
+    }
 }
 
 .addModal-header {
@@ -76,7 +83,7 @@
     background-color: var(--text-color);
     font-size: 14px;
     font-weight: bold;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .addModal-footer button:hover {

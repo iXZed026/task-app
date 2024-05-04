@@ -58,12 +58,12 @@ const EditModal: React.FC<any> = ({ ntCode, users, setUsers, setEditModalFlag })
 
     return (
         <div className="addModal">
-            <div className="addModal-container">
-                <div className="addModal-flex">
-                    <div className="addModal-header">
+            <div className="editModal-container">
+                <div className="editModal-flex">
+                    <div className="editModal-header">
                         <IoMdClose id='close-icon' onClick={closeAddModal} />
                     </div>
-                    <div className="addModal-body">
+                    <div className="editModal-body">
                         <form action="" className="add-form" onSubmit={(e: any) => e.preventDefault()}>
                             <div>
                                 <input
@@ -95,7 +95,7 @@ const EditModal: React.FC<any> = ({ ntCode, users, setUsers, setEditModalFlag })
 
                         </form>
                     </div>
-                    <div className="addModal-footer">
+                    <div className="editModal-footer">
                         <button type='submit' onClick={editUserHandler}>ویرایش</button>
                     </div>
                 </div>

@@ -74,6 +74,20 @@ table tbody tr {
     cursor: pointer;
 }
 
+#edit-icon {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    color: rgb(255, 166, 0);
+}
+
+#seen-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
 #radius {
     border-top-left-radius: 30px;
 }

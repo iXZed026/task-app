@@ -4,10 +4,12 @@ import Search from './Search';
 import DeleteModal from './DeleteModal';
 import AddModal from './AddModal';
 import EditModal from './EditModal';
+import SeenModal from './SeenModal';
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
 import { FaEdit } from "react-icons/fa";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 interface User {
     id: number,
@@ -26,7 +28,8 @@ const Users: React.FC = () => {
 
     const [deleteModalFlag, setDeleteModalFlag] = useState<boolean>(false);
     const [addModalFlag, setAddModalFlag] = useState<boolean>(false);
-    const [editModalFlag,setEditModalFlag] = useState(false)
+    const [editModalFlag, setEditModalFlag] = useState<boolean>(false);
+    const [seenModalFlag, setSeenModalFlag] = useState<boolean>(false);
     let [ntCode, setNtCode] = useState();
 
 
@@ -43,12 +46,15 @@ const Users: React.FC = () => {
         setAddModalFlag(true);
     }
 
-    const editModalHandle = (ntCode:any)=>{
+    const editModalHandle = (ntCode: any) => {
         setEditModalFlag(true)
         setNtCode(ntCode)
     }
 
-  
+    const seenModalHandle = (ntCode:any) => {
+        setSeenModalFlag(true);
+        setNtCode(ntCode);
+    }
 
 
     return (
@@ -93,8 +99,8 @@ const Users: React.FC = () => {
                                                 <td id='radius'>
                                                     <div>
                                                         <MdOutlineDelete onClick={() => deleteModalHandle(user.nationalCode)} id='delete-icon' />
-                                                        <FaEdit onClick={() => editModalHandle(user.nationalCode)} />
-
+                                                        <FaEdit id="edit-icon" onClick={() => editModalHandle(user.nationalCode)} />
+                                                        <MdOutlineRemoveRedEye id="seen-icon" onClick={() => seenModalHandle(user.nationalCode)} />
                                                     </div>
                                                 </td>
                                             </tr>
@@ -118,7 +124,12 @@ const Users: React.FC = () => {
             }
             {
                 editModalFlag && (
-                    <EditModal ntCode={ntCode} users={users} setUsers={setUsers} setEditModalFlag={setEditModalFlag}/>
+                    <EditModal ntCode={ntCode} users={users} setUsers={setUsers} setEditModalFlag={setEditModalFlag} />
+                )
+            }
+            {
+                seenModalFlag && (
+                    <SeenModal ntCode={ntCode} setSeenModalFlag={setSeenModalFlag} />
                 )
             }
         </>
