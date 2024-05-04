@@ -40,6 +40,11 @@ const AddModal: React.FC<any> = ({ setAddModalFlag, setUsers, users }) => {
                 lastName: inputValues.lastName,
                 nationalCode: inputValues.nationalCode,
                 id: users.length + 1,
+                date:{
+                    satDay:"0",
+                    sonDay:"0",
+                    monDay:"0"
+            }
             }])
             setAddModalFlag(false)
         }

@@ -1,0 +1,63 @@
+.staticModal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.477);
+    direction: rtl;
+}
+.staticModal-container {
+    width: 90%;
+    margin: auto;
+}
+.staticModal-flex {
+    width: 440px;
+    height: 400px;
+    margin: auto;
+    background-color: var(--main-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    animation: staticModalAni .6s linear 1;
+}
+
+@keyframes staticModalAni {
+    0% {
+        transform: translate(0, -1000px);
+    }
+}
+
+.staic-table {
+    padding-top: 5%;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    height: 250px;
+    border-bottom: 2px solid white;
+}
+
+.staic-table div {
+    width: 60px;
+    background-color: rgb(0, 255, 255);
+    animation: staticAni 1s ease-in 1;
+}
+
+@keyframes staticAni {
+    0%{
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+}
+
+.week-name {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}

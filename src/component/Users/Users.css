@@ -88,6 +88,12 @@ table tbody tr {
     color: var(--text-color);
 }
 
+#static-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 #radius {
     border-top-left-radius: 30px;
 }

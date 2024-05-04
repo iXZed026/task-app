@@ -5,31 +5,44 @@ import DeleteModal from './DeleteModal';
 import AddModal from './AddModal';
 import EditModal from './EditModal';
 import SeenModal from './SeenModal';
+import StaticModal from './StaticModal';
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { FcStatistics } from "react-icons/fc";
 
 interface User {
     id: number,
     name: string,
     lastName: string,
     nationalCode: string,
+    date: any
 }
+
 
 
 const Users: React.FC = () => {
 
+
+    let date = new Date()
+
+
+
+
     const usersJsonData = require('../../json/Users.json');
 
     const [users, setUsers] = useState<any>(usersJsonData);
+
+
     const [search, setSearchFlag] = useState<boolean>(false);
 
     const [deleteModalFlag, setDeleteModalFlag] = useState<boolean>(false);
     const [addModalFlag, setAddModalFlag] = useState<boolean>(false);
     const [editModalFlag, setEditModalFlag] = useState<boolean>(false);
     const [seenModalFlag, setSeenModalFlag] = useState<boolean>(false);
+    const [staticModalFlag, setStaticModalFlag] = useState<boolean>(false);
     let [ntCode, setNtCode] = useState();
 
 
@@ -51,8 +64,13 @@ const Users: React.FC = () => {
         setNtCode(ntCode)
     }
 
-    const seenModalHandle = (ntCode:any) => {
+    const seenModalHandle = (ntCode: any) => {
         setSeenModalFlag(true);
+        setNtCode(ntCode);
+    }
+
+    const staticModalHandle = (ntCode: any) => {
+        setStaticModalFlag(true);
         setNtCode(ntCode);
     }
 
@@ -101,6 +119,7 @@ const Users: React.FC = () => {
                                                         <MdOutlineDelete onClick={() => deleteModalHandle(user.nationalCode)} id='delete-icon' />
                                                         <FaEdit id="edit-icon" onClick={() => editModalHandle(user.nationalCode)} />
                                                         <MdOutlineRemoveRedEye id="seen-icon" onClick={() => seenModalHandle(user.nationalCode)} />
+                                                        <FcStatistics id="static-icon" onClick={() => staticModalHandle(user.nationalCode)} />
                                                     </div>
                                                 </td>
                                             </tr>
@@ -129,7 +148,12 @@ const Users: React.FC = () => {
             }
             {
                 seenModalFlag && (
-                    <SeenModal ntCode={ntCode} setSeenModalFlag={setSeenModalFlag} users={users}/>
+                    <SeenModal ntCode={ntCode} setSeenModalFlag={setSeenModalFlag} users={users} />
+                )
+            }
+            {
+                staticModalFlag && (
+                    <StaticModal  ntCode={ntCode} setStaticModalFlag={setStaticModalFlag} users={users} />
                 )
             }
         </>
