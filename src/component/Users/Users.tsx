@@ -129,7 +129,7 @@ const Users: React.FC = () => {
             }
             {
                 seenModalFlag && (
-                    <SeenModal ntCode={ntCode} setSeenModalFlag={setSeenModalFlag} />
+                    <SeenModal ntCode={ntCode} setSeenModalFlag={setSeenModalFlag} users={users}/>
                 )
             }
         </>
