@@ -1,0 +1,87 @@
+.seenModal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.477);
+}
+
+.seenModal-container {
+    width: 90%;
+    margin: auto;
+}
+
+.seenModal-flex {
+    width: 440px;
+    height: 400px;
+    margin: auto;
+    background-color: var(--main-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    animation: seenModalAni .6s linear 1;
+}
+
+@keyframes seenModalAni {
+    0% {
+        transform: translate(0, -1000px);
+    }
+}
+
+.seenModal-header {
+    padding: 1% 1%;
+}
+
+#seenModal-icon {
+    width: 25px;
+    height: 25px;
+    color: rgb(247, 107, 107);
+}
+
+#seenModal-icon:hover {
+    transition: .3s;
+    color: red;
+}
+
+.seenModal-body {
+    width: 95%;
+    margin: 2% auto;
+    padding: 1% 0;
+    direction: rtl;
+    text-align: center;
+}
+
+#user-icon {
+    width: 100px;
+    height: 100px;
+    color: var(--text-color);
+}
+
+.seenModal-body h4 {
+    margin-bottom: 6%;
+}
+
+.seenModal-footer {
+    text-align: center;
+    padding: 1% 0;
+}
+
+.seenModal-footer button:first-child {
+    width: 80px;
+    height: 36px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(243, 75, 75);
+    box-shadow: 0 0 5px rgb(252, 55, 55);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.seenModal-footer button:first-child:hover {
+    transition: 0.5s;
+    background-color: rgb(245, 121, 121);
+}

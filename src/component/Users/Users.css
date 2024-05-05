@@ -1,0 +1,162 @@
+.users {
+    color: white;
+    direction: rtl;
+}
+
+.users-container {
+    width: 90%;
+    margin: auto;
+}
+
+.users-flex {
+    width: 75%;
+    margin: auto;
+}
+
+
+.search {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 5px;
+    padding: 1% 1%;
+}
+
+#icon-style {
+    width: 100px;
+    height: 40px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#add-icon {
+    width: 100px;
+    height: 40px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+
+.users-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+table thead tr {
+    box-shadow: 0 -2px 4px var(--text-color);
+}
+
+table thead tr th {
+    border-bottom: 1px solid var(--text-color);
+    border-top: 1px solid var(--text-color);
+    background-color: rgba(0, 255, 255, 0.114);
+    color: white;
+}
+
+table tbody tr {
+    width: 100%;
+    /* background-image: url("../../../public/images/gray.jpg"); */
+    background-size: cover;
+    background-position: bottom;
+}
+
+#border {
+    border-right: 5px solid var(--text-color);
+    border-bottom-right-radius: 30px;
+}
+
+#delete-icon {
+    width: 23px;
+    height: 23px;
+    color: rgba(251, 99, 99, 0.577);
+    cursor: pointer;
+}
+
+#edit-icon {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    color: rgb(255, 166, 0);
+}
+
+#seen-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+#static-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#location-icon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: rgb(248, 64, 64);
+}
+
+
+#notFound {
+    padding-right: 130px;
+    text-align: center;
+    color: rgb(240, 98, 98);
+}
+
+#radius {
+    border-top-left-radius: 30px;
+}
+
+#radius div {
+    width: 80%;
+    margin: auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+table td {
+    background-color: rgb(18, 18, 28);
+
+}
+
+table th,
+table td {
+    padding: 2% 1%;
+    text-align: right;
+}
+
+table td {
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* Responsive */
+
+@media screen and (max-width:768px) {
+    .users-flex {
+        width: 100%;
+    }
+
+    #icon-style {
+        width: 35px;
+        height: 35px;
+    }
+
+    table thead tr {
+        height: 65px;
+    }
+
+    table tbody tr {
+        height: 65px;
+    }
+
+    #radius div {
+        width: 100%;
+    }
+
+}

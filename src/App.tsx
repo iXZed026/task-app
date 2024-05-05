@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
+import "./App.css";
+import Header from './component/Header/Header';
+import Users from './component/Users/Users';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <div>App</div>
+    <div className="app">
+      <Header />
+      <Users />
+    </div>
   )
 }
 
