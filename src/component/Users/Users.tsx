@@ -12,6 +12,7 @@ import { IoPersonAdd } from "react-icons/io5";
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FcStatistics } from "react-icons/fc";
+import { IoLocationOutline } from "react-icons/io5";
 
 interface User {
     id: number,
@@ -120,6 +121,7 @@ const Users: React.FC = () => {
                                                         <FaEdit id="edit-icon" onClick={() => editModalHandle(user.nationalCode)} />
                                                         <MdOutlineRemoveRedEye id="seen-icon" onClick={() => seenModalHandle(user.nationalCode)} />
                                                         <FcStatistics id="static-icon" onClick={() => staticModalHandle(user.nationalCode)} />
+                                                        <IoLocationOutline id='location-icon'/>
                                                     </div>
                                                 </td>
                                             </tr>

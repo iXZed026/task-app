@@ -32,3 +32,10 @@
     font-size: 15px;
     font-weight: bold;
 }
+
+@media screen and (max-width:768px) {
+    
+.form-search button{
+    width: 15%;
+}
+}

@@ -44,7 +44,14 @@
     height: 35px;
 }
 
-@media screen and (max-width:550px) {
+/* Responsive */
+
+@media screen and (max-width:768px) {
+
+    .header {
+        margin-bottom: 8%;
+    }
+
     .header-flex {
         justify-content: center;
         height: 60px;

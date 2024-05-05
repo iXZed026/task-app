@@ -94,11 +94,20 @@ table tbody tr {
     cursor: pointer;
 }
 
+#location-icon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: rgb(248, 64, 64);
+}
+
 #radius {
     border-top-left-radius: 30px;
 }
 
 #radius div {
+    width: 80%;
+    margin: auto; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,4 +126,30 @@ table td {
 
 table td {
     border-bottom: 1px solid var(--text-color);
+}
+
+/* Responsive */
+
+@media screen and (max-width:768px) {
+    .users-flex {
+        width: 100%;
+    }
+
+    #icon-style {
+        width: 35px;
+        height: 35px;
+    }
+
+    table thead tr {
+        height: 65px;
+    }
+
+    table tbody tr {
+        height: 65px;
+    }
+
+    #radius div {
+        width: 100%;
+    }
+
 }
