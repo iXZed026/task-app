@@ -19,7 +19,8 @@ interface User {
     name: string,
     lastName: string,
     nationalCode: string,
-    date: any
+    date: any,
+    location: string,
 }
 
 
@@ -44,7 +45,10 @@ const Users: React.FC = () => {
     const [editModalFlag, setEditModalFlag] = useState<boolean>(false);
     const [seenModalFlag, setSeenModalFlag] = useState<boolean>(false);
     const [staticModalFlag, setStaticModalFlag] = useState<boolean>(false);
+    const [locationModalFlag, setLocationModalFlag] = useState<boolean>(false);
     let [ntCode, setNtCode] = useState();
+
+    // const [notFoundUser,setNotFoundUser] = useState<string>("");
 
 
     const searchUserHandle = () => {
@@ -72,6 +76,11 @@ const Users: React.FC = () => {
 
     const staticModalHandle = (ntCode: any) => {
         setStaticModalFlag(true);
+        setNtCode(ntCode);
+    }
+
+    const locationModalHandle = (ntCode: any) => {
+        setLocationModalFlag(true);
         setNtCode(ntCode);
     }
 
@@ -109,23 +118,36 @@ const Users: React.FC = () => {
                                 </thead>
                                 <tbody id="table-body">
                                     {
-                                        users.map((user: User, key: number) => (
-                                            <tr key={user.id}>
-                                                <td id='border'>1</td>
-                                                <td>{user.name}</td>
-                                                <td>{user.lastName}</td>
-                                                <td>{user.nationalCode}</td>
-                                                <td id='radius'>
-                                                    <div>
-                                                        <MdOutlineDelete onClick={() => deleteModalHandle(user.nationalCode)} id='delete-icon' />
-                                                        <FaEdit id="edit-icon" onClick={() => editModalHandle(user.nationalCode)} />
-                                                        <MdOutlineRemoveRedEye id="seen-icon" onClick={() => seenModalHandle(user.nationalCode)} />
-                                                        <FcStatistics id="static-icon" onClick={() => staticModalHandle(user.nationalCode)} />
-                                                        <IoLocationOutline id='location-icon'/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))
+                                        users.length > 0 ? (
+                                            users.map((user: User, key: number, count: string) => (
+                                                <tr key={user.id}>
+                                                    <td id='border'>{user.id}.</td>
+                                                    <td>{user.name}</td>
+                                                    <td>{user.lastName}</td>
+                                                    <td>{user.nationalCode}</td>
+                                                    <td id='radius'>
+                                                        <div>
+                                                            <MdOutlineDelete onClick={() => deleteModalHandle(user.nationalCode)} id='delete-icon' />
+                                                            <FaEdit id="edit-icon" onClick={() => editModalHandle(user.nationalCode)} />
+                                                            <MdOutlineRemoveRedEye id="seen-icon" onClick={() => seenModalHandle(user.nationalCode)} />
+                                                            <FcStatistics id="static-icon" onClick={() => staticModalHandle(user.nationalCode)} />
+                                                            <a href={user.location}><IoLocationOutline id='location-icon' /></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        ) : (
+                                            <>
+                                                <tr style={{textAlign:"center"}}>
+                                                <td></td>
+                                                <td></td>
+                                                <td id='notFound' >کاربر مورد نظر پیدا نشد!</td>
+                                                <td></td>
+                                                <td></td>
+                                                </tr>
+                                            </>
+                                        )
+
                                     }
                                 </tbody>
                             </table>
@@ -155,11 +177,14 @@ const Users: React.FC = () => {
             }
             {
                 staticModalFlag && (
-                    <StaticModal  ntCode={ntCode} setStaticModalFlag={setStaticModalFlag} users={users} />
+                    <StaticModal ntCode={ntCode} setStaticModalFlag={setStaticModalFlag} users={users} />
                 )
             }
+
         </>
     )
 }
+
+
 
 export default Users
